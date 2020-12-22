@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
-function Rate({ rate }) {
+function Rate({ rate, setRats, searchByRate }) {
   const Rate = (x) => {
     let arr = [];
-    for (let i = 0; i < 5; i++) {
-      if (i < x) {
-        arr.push(<span> ★</span>);
+    for (let i = 1; i <= 5; i++) {
+      if (i <= x) {
+        arr.push(<span onClick={() => setRats(i)}> ★</span>);
       } else {
-        arr.push(<span>☆</span>);
+        arr.push(<span onClick={() => setRats(i)}>☆</span>);
       }
     }
     return arr;

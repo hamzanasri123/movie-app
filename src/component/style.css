@@ -58,3 +58,9 @@ button:hover {
 span {
   color: rgb(156, 128, 3);
 }
+
+.searchName {
+  margin-top: 40px;
+  padding: 8px;
+  margin-left: 20px;
+}

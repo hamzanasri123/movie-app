@@ -79,6 +79,7 @@ function App() {
     },
   ]);
   const [search, setSearch] = useState("");
+  const [rateSearch, setRateS] = useState(1);
   const hundelClick = ({ title, rate, description, posterUrl }) => {
     setFilm([...film, { title, rate, description, posterUrl }]);
   };
@@ -87,10 +88,15 @@ function App() {
     <div className="App">
       <div className="ap">
         <AddMovie hundelClick={hundelClick} />
-        <Search hundelClick={hundelClick} setSearch={setSearch} />
+        <Search
+          hundelClick={hundelClick}
+          setSearch={setSearch}
+          searchByRate={rateSearch}
+          setRats={setRateS}
+        />
       </div>
 
-      <MovieList film={film} search={search} />
+      <MovieList film={film} search={search} searchByRate={rateSearch} />
     </div>
   );
 }

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import AddMovie from "./AddMovie";
+import Rate from "./Rate";
 import "./style.css";
-function Search({ hundelClick, setSearch }) {
-  const hundelClickk = (e) => setSearch(e.target.value);
-
+function Search({ hundelClick, setSearch, searchByRate, setRats }) {
   return (
     <div className="header">
       <div className="search">
@@ -13,7 +11,9 @@ function Search({ hundelClick, setSearch }) {
           placeholder="Search Film..."
         />
       </div>
-      <div></div>
+      <div className="searchName">
+        <Rate rate={searchByRate} setRats={setRats} />
+      </div>
     </div>
   );
 }
